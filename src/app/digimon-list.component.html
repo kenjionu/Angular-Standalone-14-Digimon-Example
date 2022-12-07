@@ -1,0 +1,10 @@
+<section class="hero-section">
+    <h2 class="hero-text">
+      Descubre tu Digimon Favorito
+    </h2>
+  </section>
+
+
+  <article class="pet-list">
+    <app-digimon-list-card *ngFor="let digix of digimon; let i = index" [index]="i" [digi]="digix"></app-digimon-list-card>
+  </article>

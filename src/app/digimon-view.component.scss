@@ -1,0 +1,11 @@
+.digimon{
+    display: block;
+    text-align: right;
+    &_statistics{
+        flex-direction: row-reverse;
+        align-self: center;
+        display: flex;
+        gap: 30px;
+    }
+
+}

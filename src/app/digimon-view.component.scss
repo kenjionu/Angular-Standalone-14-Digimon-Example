@@ -1,11 +1,30 @@
-.digimon{
-    display: block;
-    text-align: right;
-    &_statistics{
-        flex-direction: row-reverse;
-        align-self: center;
-        display: flex;
-        gap: 30px;
-    }
+.column-layout{
+    max-width: 320px;
+    background-color: #fff;
+    margin: 40px auto 0 auto;
+    padding: 24px 48px;
+    display: flex;
+    align-content: center;
 
+}
+
+.digimon_statistics{
+    margin: 40px auto 0 auto;
+    gap: 30px;
+    display: flex;
+    width: 400px;
+    .types, .levels, .attributes{
+        padding:20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+    .types{
+        background-color: rebeccapurple;
+    }
+    .levels{
+        background-color: aqua;
+    }
+    .attributes{
+        background-color: brown;
+    }
 }

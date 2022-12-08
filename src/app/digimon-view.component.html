@@ -1,26 +1,27 @@
-<article class="digimon">
-  <h1>ID: {{ digimon.id }} - {{ digimon.name }}</h1>
-
-  <img [src]="digimon.images[0].href" />
-
-  <section class="digimon_statistics">
-    <section class="level">
-      <b>Level</b>
-      <p *ngFor="let itedm of digimon.levels">
-        {{ itedm.id }} - {{ itedm.level }}
-      </p>
-    </section>
-    <section class="types">
-      <b>Types</b>
-      <p *ngFor="let itedm of digimon.types">
-        {{ itedm.id }} - {{ itedm.type }}
-      </p>
-    </section>
-    <section class="attributes">
-      <b>Attributes</b>
-      <p *ngFor="let itedm of digimon.attributes">
-        {{ itedm.id }} - {{ itedm.attribute }}
-      </p>
-    </section>
+<nav>
+  <button>Regresar menu</button>
+</nav>
+<article class="column-layout">
+  <section>
+    <h1>ID: {{ digimon.id }} - {{ digimon.name }}</h1>
+    <img [src]="digimon.images[0].href" />
   </section>
 </article>
+<section class="digimon_statistics">
+  <section class="levels">
+    <b>Level</b>
+    <p *ngFor="let itedm of digimon.levels">
+      {{ itedm.id }} - {{ itedm.level }}
+    </p>
+  </section>
+  <section class="types">
+    <b>Types</b>
+    <p *ngFor="let itedm of digimon.types">{{ itedm.id }} - {{ itedm.type }}</p>
+  </section>
+  <section class="attributes">
+    <b>Attributes</b>
+    <p *ngFor="let itedm of digimon.attributes">
+      {{ itedm.id }} - {{ itedm.attribute }}
+    </p>
+  </section>
+</section>

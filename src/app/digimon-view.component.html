@@ -1,10 +1,12 @@
 <nav>
-  <button>Regresar menu</button>
+  <button (click)="comeBackDigimonList()">Regresar menu</button>
 </nav>
 <article class="column-layout">
   <section>
     <h1>ID: {{ digimon.id }} - {{ digimon.name }}</h1>
-    <img [src]="digimon.images[0].href" />
+    <section *ngFor="let item of digimon.images">
+      <img [src]="item.href">
+    </section>
   </section>
 </article>
 <section class="digimon_statistics">
@@ -22,6 +24,15 @@
     <b>Attributes</b>
     <p *ngFor="let itedm of digimon.attributes">
       {{ itedm.id }} - {{ itedm.attribute }}
+    </p>
+  </section>
+</section>
+
+<section class="digimon_description">
+  <section class="desc">
+    <b>Description</b>
+    <p *ngFor="let item of digimon.descriptions">
+      {{ item.description }}
     </p>
   </section>
 </section>

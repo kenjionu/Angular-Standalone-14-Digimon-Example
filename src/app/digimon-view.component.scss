@@ -28,3 +28,13 @@
         background-color: brown;
     }
 }
+
+.digimon_description{
+    margin: 40px auto 0 auto;
+    gap: 30px;
+    display: flex;
+    width: 400px;
+    .desc{
+        text-align: justify;
+    }
+}

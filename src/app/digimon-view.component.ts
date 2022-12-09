@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Digimon, DigimonList, DigimonServiceService } from './digimon.service.service';
+import { DigimonList, DigimonServiceService } from './digimon.service.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-digimon-view',
@@ -15,17 +14,17 @@ import { map, Observable } from 'rxjs';
 })
 export class DigimonViewComponent implements OnInit {
   digimon$!: any;
-  digimon: any | undefined;
- 
+  digimon: any | undefined = '';
+
   loading: boolean = false;
   errorMessage: any;
-  constructor(readonly digimonService: DigimonServiceService, public route: ActivatedRoute) { }
+  constructor(readonly digimonService: DigimonServiceService, public route: ActivatedRoute, public rrouter: Router) { }
 
   ngOnInit(): void {
     this.digimon$ = this.digimonService.getDigimonName(this.route.snapshot.params['id']).subscribe(
       (response: DigimonList | any) => {                           //next() callback
         console.log('response received')
-        this.digimon = response; 
+        this.digimon = response;
       },
       (error) => {                              //error() callback
         console.error('Request failed with error')
@@ -33,8 +32,12 @@ export class DigimonViewComponent implements OnInit {
         this.loading = false;
       },
       () => {                                   //complete() callback
-        this.loading = false; 
+        this.loading = false;
       })
+  }
+
+  comeBackDigimonList(){
+    this.rrouter.navigateByUrl('/list')
   }
 
 
